@@ -1,0 +1,93 @@
+:root {
+  --margin: 64px;
+  --gutter: 16px;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Typography */
+body {
+  font-family: "bebas-kai", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 3.815rem;
+}
+
+
+/* 12-column grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: var(--gutter);
+  padding-inline: var(--margin);
+}
+
+/* Multi-column box */
+.container {
+  padding: 20px;
+  font: 1.2em sans-serif;
+  column-width: 10em;
+  background-color: red;
+  opacity: 10%;
+}
+
+/* Tablet and below: 8 columns */
+@media (max-width: 1023px) {
+  :root {
+    --margin: 32px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+/* Mobile: 4 columns */
+@media (max-width: 767px) {
+  :root {
+    --margin: 16px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+/* Navbar */
+.header{
+display: flex;
+justify-content: center;
+width:max-content;
+}
+
+.navbar {
+  display: flex;
+  background-color: #171717;
+  height: 64px;
+   justify-content: left;
+  align-items: center;
+ 
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  
+}
