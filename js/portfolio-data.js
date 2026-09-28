@@ -1,0 +1,80 @@
+const makeEntries = (titles, category, scope) => titles.map((title, index) => ({
+  title,
+  slug: title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""),
+  category,
+  scope,
+  summary: "Project story and details can be added here when this portfolio entry is ready.",
+  gallery: [],
+  accent: ["#c6dd76", "#e79b64", "#8fc5b5", "#e6c8d0", "#a9bbdf", "#d6bf75"][index % 6],
+}));
+
+window.portfolioData = {
+  work: makeEntries([
+    "Luxury AU",
+    "Epix",
+    "Webgator",
+    "Mental Awareness for Kids",
+    "Logofolio",
+    "CCO",
+    "A Builders",
+    "Naval Logistics",
+    "2023 Portfolio",
+    "All Sail",
+    "Nimisski",
+    "A Web Design",
+    "Web Designs",
+    "Merch Collection for a Brand",
+    "Look Book Design for a Brand",
+    "Social Media Post",
+    "EMD",
+  ], "Selected Work", "Project scope to be added"),
+  projects: makeEntries([
+    "Neo Medieval Interior Design Concept",
+    "Gel Product Packaging",
+    "Serum Bottle",
+    "Defined",
+    "Vitamin Bottle",
+    "Present Moment",
+    "Nikon Film Camera",
+    "Vinyl Record",
+    "Telecaster",
+    "Stratocaster",
+    "Steadfsat",
+    "Tested Combat Club",
+    "Chillin Summer Collection",
+    "Motion Graphics",
+    "Illustrations",
+    "Innkeat V",
+  ], "Concept Project", "Concept development, art direction, visual design"),
+};
+
+Object.assign(window.portfolioData.work[0], {
+  title: "Luxury Deals AU",
+  slug: "luxury-deals-au",
+  category: "Branding",
+  scope: "Visual identity, packaging",
+  summary: "Your project overview.",
+  cover: "/assets/work/luxury-deals-au/06.jpg",
+  gallery: [
+    { src: "/assets/work/luxury-deals-au/01.gif", alt: "Campaign artwork" },
+    { src: "/assets/work/luxury-deals-au/02.webp", alt: "Packaging detail" },
+    { src: "/assets/work/luxury-deals-au/03.jpg", alt: "Packaging detail" },
+    { src: "/assets/work/luxury-deals-au/04.jpg", alt: "Packaging detail" },
+    { src: "/assets/work/luxury-deals-au/05.jpg", alt: "Packaging detail" },
+    { src: "/assets/work/luxury-deals-au/06.jpg", alt: "Packaging detail" },
+  ],
+});
+
+Object.assign(window.portfolioData.work[1], {
+  title: "Epix",
+  slug: "epix",
+  category: "Branding",
+  scope: "Visual identity",
+  summary: "Your project overview.",
+  cover: "/assets/work/epix/cover.png",
+  gallery: [
+    { src: "/assets/work/epix/01.png", alt: "Campaign artwork" },
+    { src: "/assets/work/epix/02.gif", alt: "Campaign artwork" },
+    { src: "/assets/work/epix/03.png", alt: "Campaign artwork" },
+  ],
+});
