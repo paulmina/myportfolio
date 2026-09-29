@@ -10,16 +10,13 @@ if (project && detail) {
   detail.querySelectorAll("[data-project-category]").forEach((node) => {
     node.textContent = project.category;
   });
-  detail.querySelector("[data-project-summary]").textContent = project.summary;
+  const summary = detail.querySelector("[data-project-summary]");
+  summary.textContent = project.summary;
+  summary.hidden = !project.summary;
   detail.querySelector("[data-project-scope]").textContent = project.scope;
 
   const gallery = detail.querySelector("[data-project-gallery]");
-  const galleryItems = project.gallery.length
-    ? project.gallery
-    : Array.from({ length: 4 }, (_, index) => ({
-        src: `https://placehold.co/1600x1200/${project.accent.slice(1)}/171717?text=${encodeURIComponent(`${project.title} / Image ${index + 1}`)}`,
-        alt: `${project.title}, gallery placeholder ${index + 1}`,
-      }));
+  const galleryItems = project.gallery || [];
 
   galleryItems.forEach((item) => {
     const figure = document.createElement("figure");
