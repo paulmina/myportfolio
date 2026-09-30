@@ -4,7 +4,7 @@
 // See README.md for a full guide.
 // ============================================================
 
-const ACCENTS = ["#c6dd76", "#e79b64", "#8fc5b5", "#e6c8d0", "#a9bbdf", "#d6bf75"];
+const ACCENTS = ["#F25623", "#171717", "#4D4D4D", "#777B87", "#969696", "#DEDEDE"];
 
 const slugify = (title) =>
   title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
