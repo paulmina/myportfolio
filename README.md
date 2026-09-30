@@ -39,10 +39,10 @@ project. The right content is loaded based on the `slug` in the URL.
      category: "Branding",
      scope: "Visual identity, packaging",
      summary: "Short overview of the project.",
-     cover: "/assets/work/my-new-client/cover.png",
+     cover: "assets/work/my-new-client/cover.png",
      gallery: [
-       { src: "/assets/work/my-new-client/01.png", alt: "Campaign artwork" },
-       { src: "/assets/work/my-new-client/02.png", alt: "Campaign artwork" },
+       { src: "assets/work/my-new-client/01.png", alt: "Campaign artwork" },
+       { src: "assets/work/my-new-client/02.png", alt: "Campaign artwork" },
      ],
    },
    ```

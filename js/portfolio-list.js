@@ -1,3 +1,6 @@
+// Root-relative path prefix, based on each page's declared depth (see PAGE_DEPTH in the HTML).
+const ROOT = "../".repeat(window.PAGE_DEPTH || 0);
+
 const createPortfolioCard = (item, kind) => {
   const article = document.createElement("article");
   article.className = "work-card";
@@ -5,7 +8,7 @@ const createPortfolioCard = (item, kind) => {
 
   const link = document.createElement("a");
   link.className = "work-card-link";
-  const isDetailPage = location.pathname.split("/").filter(Boolean).length > 1;
+  const isDetailPage = (window.PAGE_DEPTH || 0) >= 2;
   const detailPath = isDetailPage ? `../../${kind}/project/` : "project/";
   link.href = `${detailPath}?slug=${encodeURIComponent(item.slug)}`;
   link.setAttribute("aria-label", `View ${item.title}, ${item.category}`);
@@ -18,7 +21,7 @@ const createPortfolioCard = (item, kind) => {
   if (item.cover) {
     const cover = document.createElement("img");
     cover.className = "portfolio-card-cover";
-    cover.src = item.cover;
+    cover.src = ROOT + item.cover;
     cover.alt = "";
     cover.loading = "lazy";
     art.append(cover);
