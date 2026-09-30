@@ -1,6 +1,6 @@
 // PROJECT_KIND and PAGE_DEPTH are declared inline in each detail page's HTML.
 const projectKind = window.PROJECT_KIND || "work";
-const ROOT = "../".repeat(window.PAGE_DEPTH || 0);
+const projectRoot = "../".repeat(window.PAGE_DEPTH || 0);
 const projectSlug = new URLSearchParams(location.search).get("slug");
 const project = (window.portfolioData[projectKind] || []).find((item) => item.slug === projectSlug);
 const detail = document.querySelector("[data-project-detail]");
@@ -22,7 +22,7 @@ if (project && detail) {
   galleryItems.forEach((item) => {
     const figure = document.createElement("figure");
     const image = document.createElement("img");
-    image.src = ROOT + item.src;
+    image.src = projectRoot + item.src;
     image.alt = item.alt || `${project.title} project image`;
     image.loading = "lazy";
     figure.append(image);
